@@ -1,0 +1,91 @@
+0 forma Normal
+Primera tabla definición de categorías 
+•	Lista de categorías existentes
+•	Nombre_Categoria 
+•	Descripcion_Categoria 
+•	Lista de caracteristicas existentes
+•	Nombre_Caracteristica
+•	Descripcion_caracteristica
+
+
+Segunda tabla definición de especificaciones.
+•	Especificaciones de producto
+•	Lista de especificaciones existentes
+•	Nombre de especificación 
+•	Descripción de especificación 
+
+Tercera Tabla de productos 
+•	Nombre _producto
+•	Descripción_producto
+•	Categoría del producto
+•	Código_producto
+•	Caracteristicas_producto
+•	Especificaciones del producto
+•	Precio venta del producto
+•	Stock producto (cantidad inicial)
+•	Lista de productos
+•	Cantidad de productos a ingresar 
+•	Cantidad de productos a vender
+Relación de tablas jerarquías de categorías 
+•	Llave foránea tabla de productos 
+
+
+Cuarta tabla Registro de venta 
+•	Fecha_venta(codificación)
+•	Hora_venta(codificación)
+•	Producto vendido
+•	Cantidad de producto vendido 
+•	Total ventas
+
+El rol de usuario lo definimos en la codificación.
+Quinta tabla Usuarios 
+•	Nombre de usuario 
+•	Código_usuario
+•	 Fecha de acceso al sistema (para registro de actividades de los usuarios)
+•	Fecha de salida del sistema (para registro de actividades de los usuarios)
+
+Sexta tabla Movimiento (Stock)
+•	Fecha_Stock(codificación)
+•	Hora_Stock(codificación)
+•	Operación realizada (Check box)
+•	Cantidad_producto
+•	Usuario (Referenciar)
+
+Séptima tabla Proveedores
+•	Nombre_Proveedor 
+•	Codigo_proveedor
+•	… (referenciar a tabla productos para que la relación tenga sentido) // Apartado 3.1, punto: 3.1.2
+•	… (referenciar a tabla productos para que la relación tenga sentido) // Apartado 3.1, punto: 3.1.3
+
+Octava tabla Pedidos (Compras) 
+•	Código de pedido(codificación)
+•	Numero de pedido 
+•	(puede que tenga una referencia con la tabla de productos)
+•	Lista de pedidos 
+•	Fecha pedido(codificación)
+•	Estado de pedido (pendiente, en curso, completado)
+•	Detalle de pedido 
+•	Fecha de entrega estimada
+•	Productos solicitados (referenciar con la tabla de productos)
+•	La cantidad de cada producto (hacer una referencia directa con la tabla productos)
+•	Total de pedidos 
+•	Lista pedidos pendientes
+Debatir si la fecha de pedido va ser igual a la fecha de creación. 
+Nota: posible novena tabla: registro de recepción de productos 
+Fecha que recibimos el producto
+Hora que recibimos el producto
+El detalle de los productos recibidos
+La cantidad de cada producto}
+Nota: el pedido de compra podría ser una referencia a la tabla de pedidos(compra)
+Decima tabla Inventario Actual
+•	(referencia a la tabla de productos)
+•	(referencia a la tabla de movimientos (stock))
+•	Punto de reorden (Codificación)
+
+Posible onceaba tabla informes de movimientos de stock
+Referencia a la tabla de (movimiento stock)
+
+Posible doceava tabla: informe de compras 
+Referencia a la tabla de pedidos (compras realizadas)
+
+
