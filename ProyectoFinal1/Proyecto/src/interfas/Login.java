@@ -37,6 +37,7 @@ public class Login extends javax.swing.JFrame {
         btnvalidar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("INGRESAR");
 
         jLabel1.setText("USUARIO");
 
@@ -131,7 +132,7 @@ public class Login extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this , "ERROR" , "Pirir" , JOptionPane.ERROR_MESSAGE);
         }
-
+            this.setVisible(false);
     }//GEN-LAST:event_btnvalidarActionPerformed
 
     /**
@@ -165,6 +166,7 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
+                
             }
         });
     }
