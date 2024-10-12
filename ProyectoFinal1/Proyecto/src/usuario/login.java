@@ -15,7 +15,7 @@ public class login {
     {
         boolean usuarioValidado = false;
                 
-        if(("admin").equals(usuario) && ("1234").equals(contraseña))
+        if(("INVITADO").equals(usuario) && ("2024").equals(contraseña))
         {   usuarioValidado = true;
 }                
                 return usuarioValidado;

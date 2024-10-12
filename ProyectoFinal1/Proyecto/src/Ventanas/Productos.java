@@ -4,6 +4,8 @@
  */
 package Ventanas;
 import interfas.principal;
+import java.util.Scanner;
+import Datos.CRUD;
 /**
  *
  * @author Dell
@@ -38,6 +40,7 @@ public class Productos extends javax.swing.JFrame {
         btnModificacion = new javax.swing.JButton();
         btnConsideraciones = new javax.swing.JButton();
         btnAnterior = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("PRODUCTOS");
@@ -50,12 +53,22 @@ public class Productos extends javax.swing.JFrame {
 
         btnCategorias1.setFont(new java.awt.Font("SimHei", 0, 18)); // NOI18N
         btnCategorias1.setText("Categorías de productos");
+        btnCategorias1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategorias1ActionPerformed(evt);
+            }
+        });
 
         btnEspecificaciones.setFont(new java.awt.Font("SimHei", 0, 18)); // NOI18N
         btnEspecificaciones.setText("Especificaciones de productos");
 
         brnnuevo.setFont(new java.awt.Font("SimHei", 0, 18)); // NOI18N
         brnnuevo.setText("Nuevo producto");
+        brnnuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnnuevoActionPerformed(evt);
+            }
+        });
 
         btnAlta.setFont(new java.awt.Font("SimHei", 0, 18)); // NOI18N
         btnAlta.setText("Alta de producto");
@@ -76,6 +89,13 @@ public class Productos extends javax.swing.JFrame {
             }
         });
 
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -84,33 +104,42 @@ public class Productos extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCaracteristicas)
-                            .addComponent(btnCategorias1)
-                            .addComponent(btnEspecificaciones))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnBaja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(brnnuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAlta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnConsideraciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                            .addComponent(btnConsideraciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnCategorias1)
+                        .addGap(117, 117, 117))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addComponent(btnAnterior)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnModificacion)
-                .addGap(86, 86, 86))
+                .addComponent(btnGuardar)
+                .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnModificacion)
+                        .addGap(86, 86, 86))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEspecificaciones)
+                            .addComponent(btnCaracteristicas))
+                        .addGap(66, 66, 66))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(14, 14, 14)
                 .addComponent(btnCategorias1)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(btnCaracteristicas)
                 .addGap(18, 18, 18)
                 .addComponent(btnEspecificaciones)
@@ -122,15 +151,13 @@ public class Productos extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBaja)
                     .addComponent(btnConsideraciones))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnModificacion)
-                        .addContainerGap(33, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAnterior)
-                        .addGap(14, 14, 14))))
+                .addGap(18, 18, 18)
+                .addComponent(btnModificacion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAnterior)
+                    .addComponent(btnGuardar))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -179,6 +206,29 @@ public class Productos extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnAnteriorActionPerformed
 
+    private void brnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnnuevoActionPerformed
+        // TODO add your handling code here:
+        Scanner scan = new Scanner(System.in);
+        int num;
+        System.out.println("Esto es una prueba");
+        System.out.println("Ingrese un numero");
+        num = scan.nextInt();
+        System.out.println("el numero ingresado es: " + num);
+    }//GEN-LAST:event_brnnuevoActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        //esto es para guardar
+        CRUD escritura = new CRUD();
+        boolean estadoEscritura = escritura.escribirDatos("categorias", "hola,josue,pirir");
+        
+        System.out.println(estadoEscritura);
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnCategorias1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategorias1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCategorias1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -224,6 +274,7 @@ public class Productos extends javax.swing.JFrame {
     private javax.swing.JButton btnCategorias1;
     private javax.swing.JButton btnConsideraciones;
     private javax.swing.JButton btnEspecificaciones;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
