@@ -6,6 +6,7 @@ package Ventanas;
 import interfas.principal;
 import java.util.Scanner;
 import Datos.CRUD;
+import formCts.ctsProd;
 /**
  *
  * @author Dell
@@ -50,6 +51,11 @@ public class Productos extends javax.swing.JFrame {
 
         btnCaracteristicas.setFont(new java.awt.Font("SimHei", 0, 18)); // NOI18N
         btnCaracteristicas.setText("Características de productos");
+        btnCaracteristicas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCaracteristicasActionPerformed(evt);
+            }
+        });
 
         btnCategorias1.setFont(new java.awt.Font("SimHei", 0, 18)); // NOI18N
         btnCategorias1.setText("Categorías de productos");
@@ -227,7 +233,17 @@ public class Productos extends javax.swing.JFrame {
 
     private void btnCategorias1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategorias1ActionPerformed
         // TODO add your handling code here:
+        catExist cat = new catExist();
+        cat.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCategorias1ActionPerformed
+
+    private void btnCaracteristicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaracteristicasActionPerformed
+        // TODO add your handling code here:
+        ctsProd prod=new ctsProd();
+        prod.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCaracteristicasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,10 +274,8 @@ public class Productos extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Productos().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Productos().setVisible(true);
         });
     }
 

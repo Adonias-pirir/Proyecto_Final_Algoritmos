@@ -1,0 +1,3 @@
+01,VESTIMENTA,Ropa americana para hombre y mujer
+02,CALZADO,Zapatos para cualquier ocasion formal o casual
+03,ACCESORIOS DE COMPUTO,Laptop Pc escritorio Mouse Teclado

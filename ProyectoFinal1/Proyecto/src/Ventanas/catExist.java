@@ -105,6 +105,11 @@ public class catExist extends javax.swing.JFrame {
         });
 
         jButton1.setText("Anterior");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         btnCargar.setText("Cargar Datos");
         btnCargar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -203,6 +208,13 @@ public class catExist extends javax.swing.JFrame {
         ModeloProductos modelo = new ModeloProductos();
         this.tblDatos.setModel(modelo);
     }//GEN-LAST:event_btnCargarMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Productos prod = new Productos();
+        prod.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
