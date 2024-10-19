@@ -48,18 +48,18 @@ public class RegistroProd {
         // Solicitar al usuario que ingrese datos
         System.out.println("Ingrese el codigo: ");
         int codigo = scanner.nextInt();
+        
+        // Limpiar el buffer de entrada de teclado después de leer el entero
+        scanner.nextLine(); // Consumir el carácter de nueva línea pendiente
 
         System.out.println("Ingrese el producto: ");
         String nombreProd = scanner.nextLine();
-
-        // Limpiar el buffer de entrada de teclado
-        scanner.nextLine();
 
         System.out.println("Ingrese la cantidad : ");
         int cantidad = scanner.nextInt();
 
         // Crear una cadena de texto con los datos ingresados
-        String datos = "Codigo: " + codigo + "\n" + " Producto: " + nombreProd + "\n" + " Cantidad: " + cantidad + "\n";
+        String datos = "Codigo: " + codigo + " Producto: " + nombreProd + " Cantidad: " + cantidad + "\n";
 
         // Guardar los datos en un archivo de texto
         try {
@@ -69,7 +69,6 @@ public class RegistroProd {
             System.out.println("Los datos han sido guardados en el archivo 'productos.txt'.");
         } catch (IOException e) {
             System.out.println("Ocurrió un error al guardar los datos.");
-            e.printStackTrace();
         }
     }
     

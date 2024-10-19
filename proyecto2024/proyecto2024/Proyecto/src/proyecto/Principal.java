@@ -111,12 +111,12 @@ public class Principal {
 
                         switch (opcionGestion) {
                             case 1 -> {
-                                //RegistroProd registro = new RegistroProd();
+                               
                                 RegistroProd.main();
-                                //System.out.print("\nNecesito ingresar un  nuevo producto: ");
+          
                             }
                             case 2 -> {
-                                System.out.print("\nIngrese el codigo del producto:");
+                                PedidosCom.main();
                                 
                             }
                             case 3 -> System.out.println("\nVolver al Inicio.");
@@ -126,8 +126,45 @@ public class Principal {
                 }
                
                 case 3 -> {
+                    int opcionGestion;
+                    do {
+                        System.out.println("\n\n--- Proveedor ---");
+                        System.out.println("1. Ingresar Proveedor");
+                        System.out.println("2. Volver al inicio");
+                        opcionGestion = scan.nextInt();
+                        scan.nextLine(); // Consumir el salto de línea
+
+                        switch (opcionGestion) {
+                            case 1 -> {
+                    
+                                ProveedorPedido.main();
+           
+                            }
+                            case 2 -> System.out.println("\nVolver al Inicio.");
+                            default -> System.out.println("\nOpcion incorrecta 1-2.");
                 }
+                        } while (opcionGestion != 2);
+                    }
                 case 4 -> {
+                    int opcionGestion;
+                    do {
+                        System.out.println("\n\n--- Informe ---");
+                        System.out.println("1. Generar informe en archivo CSV");
+                        System.out.println("2. Volver al inicio");
+                        opcionGestion = scan.nextInt();
+                        scan.nextLine(); // Consumir el salto de línea
+
+                        switch (opcionGestion) {
+                            case 1 -> {
+                
+                                InventarioActual.main(args);
+                              
+                            }
+                            case 2 -> System.out.println("\nVolver al Inicio.");
+                            default -> System.out.println("\nOpcion incorrecta 1-2.");
+                }
+                        } while (opcionGestion != 2);
+                    
                 }
                 case 5 -> {
                     System.out.println("Saliendo del sistema.");
@@ -135,9 +172,7 @@ public class Principal {
                 }
                 default -> System.out.println("Opciin incorrecta.");
             }
-            // Agrega lógica para la opción 2
-            // Agrega lógica para la opción 3
-            // Agrega lógica para la opción 4
+      
                     } while (opc != 5);
     }
 }

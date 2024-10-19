@@ -1,9 +1,2 @@
-Codigo: 1
-Producto: 
-Cantidad: 2
-Codigo: 2
- Producto: 
- Cantidad: 1
-Codigo: 3
- Producto: 
- Cantidad: 1
+Codigo: 2 Producto: Zapatos casuales Cantidad: 1
+Codigo: 4 Producto: Joyeria Cantidad: 4

@@ -13,14 +13,17 @@ import java.io.IOException;
  * @author corre
  */
 public class PedidosCom {
+    public PedidosCom(){
+        
+    }
     
-        public static void main(String[] args) {
+        public static void main() {
         // Archivos de entrada
         String archivoCat = "categorias.txt";
         String archivoProd = "productos.txt";
 
         // Mostrar los datos combinados de ambos archivos
-        System.out.println("Datos combinados de Categorías y Productos:");
+        System.out.println("Categorias y sus productos:");
         System.out.println("===========================================");
         
         // Mostrar categorías
